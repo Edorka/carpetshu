@@ -5,16 +5,26 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { CategoriesComponent } from './categories/categories.component';
+
+const app_routes: Routes = [
+  { path: 'categories', component: CategoriesComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'categories' }
+]
+
+export const app_routing = RouterModule.forRoot(app_routes);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CategoriesComponent
   ],
   imports: [
     MaterialModule,
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    app_routing
   ],
   providers: [],
   bootstrap: [AppComponent]
