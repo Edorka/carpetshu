@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "main": "main.js",
   "devDependencies": {
+    "@angular/cli": "^1.1.1",
     "electron": "^1.6.11"
+  },
+  "dependencies": {
+    "@angular/material": "^2.0.0-beta.6"
   }
 }
