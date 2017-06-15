@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { CategoriesComponent } from './categories/categories.component';
+import { CategoryEntryComponent } from './categories/entry/entry.component';
 
 const app_routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
@@ -17,7 +18,8 @@ export const app_routing = RouterModule.forRoot(app_routes);
 @NgModule({
   declarations: [
     AppComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    CategoryEntryComponent
   ],
   imports: [
     MaterialModule,
