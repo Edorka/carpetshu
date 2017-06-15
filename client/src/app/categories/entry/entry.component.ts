@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from '../../category'
 
 
 @Component({
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryEntryComponent implements OnInit {
 
+  model = new Category("Test", 1 ,1)
   constructor(
   ) {
-    
+
   }
 
   ngOnInit() {

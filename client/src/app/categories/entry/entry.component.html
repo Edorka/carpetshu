@@ -1,14 +1,17 @@
 <form class="new-category" flex>
   <md-input-container flex>
-    <input mdInput placeholder="Category Name" type="text" value="name">
+    <input mdInput placeholder="Category Name" type="text"
+      [(ngModel)]="model.name" name="name">
   </md-input-container>
 
   <md-input-container>
-    <input mdInput type="number" placeholder="Overall Arb." value="3">
+    <input mdInput type="number" placeholder="Overall Arb."
+      [(ngModel)]="model.oaArbiters" name="name">
   </md-input-container>
 
   <md-input-container>
-    <input mdInput type="number" placeholder="Tech. Qual. Arb." value="3">
+    <input mdInput type="number" placeholder="Tech. Qual. Arb."
+      [(ngModel)]="model.tqArbiters" name="name">
   </md-input-container>
   <button md-button>Append</button>
 </form>
