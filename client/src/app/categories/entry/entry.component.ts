@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../../category'
+import { CategoryParameters } from '../category-parameters'
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Category } from '../../category'
 })
 export class CategoryEntryComponent implements OnInit {
 
-  model = new Category("Test", 1 ,1)
+  parameters = new CategoryParameters("3", 1 ,1, 0)
   constructor(
   ) {
 
