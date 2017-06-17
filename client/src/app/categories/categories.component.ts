@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-
-  constructor() { }
+  categoriesList: any[];
+  constructor() {
+    this.categoriesList = [1, 2, 3, 4, 5];
+  }
 
   ngOnInit() {
   }

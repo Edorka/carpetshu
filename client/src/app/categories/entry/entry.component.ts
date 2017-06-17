@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CategoryParameters } from '../category-parameters'
 
 
@@ -8,14 +8,25 @@ import { CategoryParameters } from '../category-parameters'
   styleUrls: ['./entry.component.css']
 })
 export class CategoryEntryComponent implements OnInit {
-
-  parameters = new CategoryParameters("3", 1 ,1, 0)
+  list: any[]
+  @Input('appendTo')
+  set appentTo(list: any[]){
+      console.log(list);
+      this.list = list;
+  }
+  parameters = new CategoryParameters("", 3 , 3, 0)
   constructor(
   ) {
 
   }
 
   ngOnInit() {
+    console.log( this.list );
+  }
+  addCategory(){
+    console.log('parameters', this.parameters);
+    this.list.push(this.parameters);
+    this.parameters = new CategoryParameters("", 3 , 3, 0)
   }
 
 }
