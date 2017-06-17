@@ -8,25 +8,30 @@ import { CategoryParameters } from '../category-parameters'
   styleUrls: ['./entry.component.css']
 })
 export class CategoryEntryComponent implements OnInit {
-  list: any[]
+  parameters: CategoryParameters = {
+    name: 'New one',
+    tqArbiters: 3,
+    oaArbiters: 3,
+    ndArbiters: 0
+  }
+  list: CategoryParameters[]
   @Input('appendTo')
-  set appentTo(list: any[]){
+  set appentTo(list: CategoryParameters[]){
+      console.log(this);
       console.log(list);
       this.list = list;
   }
-  parameters = new CategoryParameters("", 3 , 3, 0)
   constructor(
   ) {
 
   }
-
   ngOnInit() {
-    console.log( this.list );
+    console.log( this.parameters );
   }
   addCategory(){
     console.log('parameters', this.parameters);
     this.list.push(this.parameters);
-    this.parameters = new CategoryParameters("", 3 , 3, 0)
+    this.parameters = new CategoryParameters("new one", 3 , 3, 0)
   }
 
 }
