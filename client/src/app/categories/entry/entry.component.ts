@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CategoryParameters } from '../category-parameters'
+import { CategoryParameters } from '../shared/category-parameters'
 
 
 @Component({
