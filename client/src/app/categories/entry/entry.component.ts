@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CategoryParameters } from '../shared/category-parameters'
+import { Category } from '../shared/category'
 
 
 @Component({
@@ -14,11 +15,9 @@ export class CategoryEntryComponent implements OnInit {
     oaArbiters: 3,
     ndArbiters: 0
   }
-  list: CategoryParameters[]
+  list: Category[]
   @Input('appendTo')
-  set appentTo(list: CategoryParameters[]){
-      console.log(this);
-      console.log(list);
+  set appentTo(list: Category[]){
       this.list = list;
   }
   constructor(
@@ -29,8 +28,9 @@ export class CategoryEntryComponent implements OnInit {
     console.log( this.parameters );
   }
   addCategory(){
-    console.log('parameters', this.parameters);
-    this.list.push(this.parameters);
+    var category = new Category(this.parameters);
+    console.log('category', category);
+    this.list.push(category);
     this.parameters = new CategoryParameters("new one", 3 , 3, 0)
   }
 

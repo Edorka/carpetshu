@@ -1,6 +1,11 @@
 <div layout-padding>
   <category-entry [appendTo]="categoriesList"></category-entry>
   <md-list>
-    <md-list-item  *ngFor="let category of categoriesList">{{category.name}}</md-list-item>
+    <md-list-item  *ngFor="let category of categoriesList">
+      {{category.parameters.name}}
+      OA:{{category.parameters.oaArbiters}}
+      TQ:{{category.parameters.tqArbiters}}
+      ND:{{category.parameters.ndArbiters}}
+    </md-list-item>
   </md-list>
 </div>

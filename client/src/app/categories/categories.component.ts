@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryParameters } from './category-parameters'
+import { Category } from './shared/category'
 
 @Component({
   selector: 'app-categories',
@@ -7,7 +7,7 @@ import { CategoryParameters } from './category-parameters'
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  categoriesList: CategoryParameters[];
+  categoriesList: Category[];
   constructor() {
     this.categoriesList = [];
   }
