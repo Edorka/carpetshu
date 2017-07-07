@@ -1,11 +1,11 @@
 <div layout-padding>
   <md-list>
     <md-list-item  *ngFor="let category of categoriesList">
-      <span fxFlex="55">{{category.parameters.name}}</span>
+      <span fxFlex="45">{{category.parameters.name}}</span>
       <span fxFlex="15">OA:{{category.parameters.oaArbiters}}</span>
       <span fxFlex="15">TQ:{{category.parameters.tqArbiters}}</span>
       <span fxFlex="15">ND:{{category.parameters.ndArbiters}}</span>
-      <span fxFlex="15">buttons</span>
+      <button md-button fxFlex="10"  (click)="openCategory(category)">Enter</button>
     </md-list-item>
   </md-list>
   <category-entry [appendTo]="categoriesList"></category-entry>
