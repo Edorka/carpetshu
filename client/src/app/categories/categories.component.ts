@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriesService } from './categories.service'
 import { Category } from './shared/category'
 
 @Component({
@@ -8,11 +9,14 @@ import { Category } from './shared/category'
 })
 export class CategoriesComponent implements OnInit {
   categoriesList: Category[];
-  constructor() {
-    this.categoriesList = [];
+  constructor(private _categoriesService: CategoriesService) {
+    this._categoriesService = _categoriesService;
+
   }
 
   ngOnInit() {
+    this._categoriesService.getList()
+        .then(categories => this.categoriesList = categories);
   }
 
 }

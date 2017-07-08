@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CategoriesService } from '../categories.service'
 import { CategoryParameters } from '../shared/category-parameters'
 import { Category } from '../shared/category'
 
@@ -11,12 +12,9 @@ import { Category } from '../shared/category'
 export class CategoryEntryComponent implements OnInit {
   parameters: CategoryParameters;
   list: Category[];
-  @Input('appendTo')
-  set appentTo(list: Category[]){
-      this.list = list;
-  }
-  constructor(
-  ) {
+
+  constructor(private _categoriesService: CategoriesService) {
+    this._categoriesService = _categoriesService;
     this.parameters = new CategoryParameters("New");
   }
   ngOnInit() {
@@ -25,7 +23,7 @@ export class CategoryEntryComponent implements OnInit {
   addCategory(){
     var category = new Category(this.parameters);
     console.log('category', category);
-    this.list.push(category);
+    this._categoriesService.append(category);
     this.parameters = new CategoryParameters("new one")
   }
 
