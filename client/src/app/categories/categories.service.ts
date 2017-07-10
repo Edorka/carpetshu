@@ -16,5 +16,9 @@ export class CategoriesService {
     this.list.push(category);
     return position;
   }
+  get(position: number): Category{
+    console.log('this.list', this.list, position, this.list[position]);
+    return this.list[position];
+  }
 
 }

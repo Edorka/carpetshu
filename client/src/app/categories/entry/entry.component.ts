@@ -22,9 +22,9 @@ export class CategoryEntryComponent implements OnInit {
   }
   addCategory(){
     var category = new Category(this.parameters);
-    console.log('category', category);
     this._categoriesService.append(category);
     this.parameters = new CategoryParameters("new one")
   }
+
 
 }

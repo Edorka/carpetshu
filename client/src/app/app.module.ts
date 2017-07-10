@@ -10,9 +10,14 @@ import { CategoriesService } from './categories/categories.service';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryEntryComponent } from './categories/entry/entry.component';
+import { CompetitorsComponent } from './categories/competitors/competitors.component';
 
 const app_routes: Routes = [
-  { path: 'categories', component: CategoriesComponent },
+  { path: 'categories',
+    component: CategoriesComponent},
+  { path: 'categories/:position/competitors',
+       component: CompetitorsComponent
+     },
   { path: '**', pathMatch: 'full', redirectTo: 'categories' }
 ]
 
@@ -22,7 +27,8 @@ export const app_routing = RouterModule.forRoot(app_routes);
   declarations: [
     AppComponent,
     CategoriesComponent,
-    CategoryEntryComponent
+    CategoryEntryComponent,
+    CompetitorsComponent
   ],
   imports: [
     MaterialModule,
