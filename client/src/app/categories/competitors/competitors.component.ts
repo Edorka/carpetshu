@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriesService } from '../categories.service'
 import { Category } from '../shared/category'
 import { Competitor } from '../shared/competitor'
@@ -14,12 +14,15 @@ export class CompetitorsComponent implements OnInit {
   category: Category;
   private sub: any;
   newCompetitor: Competitor
-  constructor(private route: ActivatedRoute, private categories: CategoriesService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private categories: CategoriesService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
        this.id = +params['position']; // (+) converts string 'id' to a number
        this.category = this.categories.get(this.id);
+       if (this.category === undefined){
+          this.router.navigate(['categories'])
+       }
     });
     this.newCompetitor = new Competitor("");
   }
