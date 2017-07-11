@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CategoriesService } from '../categories.service'
 import { Category } from '../shared/category'
+import { Competitor } from '../shared/competitor'
 
 @Component({
   selector: 'app-competitors',
@@ -12,6 +13,7 @@ export class CompetitorsComponent implements OnInit {
   id: number;
   category: Category;
   private sub: any;
+  newCompetitor: Competitor
   constructor(private route: ActivatedRoute, private categories: CategoriesService) { }
 
   ngOnInit() {
@@ -19,6 +21,11 @@ export class CompetitorsComponent implements OnInit {
        this.id = +params['position']; // (+) converts string 'id' to a number
        this.category = this.categories.get(this.id);
     });
+    this.newCompetitor = new Competitor("");
+  }
+  add(competitor: Competitor){
+    this.category.addCompetitor(competitor);
+    this.newCompetitor = new Competitor("");
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

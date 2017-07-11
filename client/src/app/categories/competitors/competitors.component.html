@@ -1,3 +1,18 @@
-<h1>
-  {{category.parameters.name}}
-</h1>
+<div layout-padding>
+  <h1>
+    {{category.parameters.name}}
+  </h1>
+  <md-list>
+    <md-list-item  *ngFor="let competitor of category.competitors; let current = index">
+      <span fxFlex="85">{{competitor.name}}</span>
+      <button md-button fxFlex="15"  (click)="remove(current)">Remove</button>
+    </md-list-item>
+  </md-list>
+  <form class="new-category" #newCategoryForm="ngForm" flex>
+    <md-input-container fxFlex="85">
+      <input mdInput placeholder="Competitor Name" type="text"
+        [(ngModel)]="newCompetitor.name" name="name">
+    </md-input-container>
+    <button md-button fxFlex="10"  (click)="add(newCompetitor)">Append</button>
+  </form>
+</div>

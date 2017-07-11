@@ -16,8 +16,7 @@ const app_routes: Routes = [
   { path: 'categories',
     component: CategoriesComponent},
   { path: 'categories/:position/competitors',
-       component: CompetitorsComponent
-     },
+    component: CompetitorsComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'categories' }
 ]
 

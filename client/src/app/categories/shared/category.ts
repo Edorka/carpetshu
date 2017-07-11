@@ -11,4 +11,7 @@ export class Category {
       this.parameters = parameters;
       this.competitors = competitors;
   }
+  addCompetitor(competitor: Competitor){
+    this.competitors.push(competitor);
+  }
 }
