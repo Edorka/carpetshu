@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocalStorageModule } from 'angular-2-local-storage';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
@@ -35,6 +36,10 @@ export const app_routing = RouterModule.forRoot(app_routes);
     FlexLayoutModule,
     BrowserAnimationsModule,
     FormsModule,
+    LocalStorageModule.withConfig({
+            prefix: 'carpetsh-app',
+            storageType: 'localStorage'
+        }),
     HttpModule,
     app_routing
   ],
