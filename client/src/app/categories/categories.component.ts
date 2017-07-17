@@ -13,12 +13,14 @@ export class CategoriesComponent implements OnInit {
     private _categoriesService: CategoriesService
   ) {
     this._categoriesService = _categoriesService;
+    this.categoriesList = [];
   }
 
   ngOnInit() {
+    //console.log('new subscription', this.categoriesList);
     this._categoriesService.getList()
         .subscribe(categories => {
-          this.categoriesList = categories
+          this.categoriesList = categories;
         });
   }
 
