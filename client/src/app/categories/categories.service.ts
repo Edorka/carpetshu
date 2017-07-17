@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Category } from './shared/category';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 import { LocalStorageService } from 'angular-2-local-storage';
 
 @Injectable()
@@ -18,9 +20,10 @@ export class CategoriesService {
         var parsed_data:Category[] = JSON.parse(data);
         this.list = parsed_data;
     }
+
   }
-  getList(): Promise<Category[]> {
-    return Promise.resolve(this.list);
+  getList(): Observable<Category[]> {
+    return of(this.list);
   }
   append(category): number{
     var position:number = this.list.length;
