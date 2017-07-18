@@ -1,4 +1,4 @@
-<div layout-padding>
+<div layout-padding fxLayout="column">
   <md-list>
     <md-list-item  *ngFor="let category of categoriesList; let current = index">
       <span fxFlex="45">{{category.parameters.name}}
@@ -13,4 +13,7 @@
     </md-list-item>
   </md-list>
   <category-entry></category-entry>
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
+    <button md-raised-button  [disabled]="canSave === false" (click)="save()">Save to disk</button>
+  </div>
 </div>
