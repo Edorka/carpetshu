@@ -1,1 +1,8 @@
+:host{
+  height: 100%;
+}
 
+.header span{
+  font-weight: bold;
+
+}

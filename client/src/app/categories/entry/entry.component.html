@@ -1,21 +1,21 @@
 <form class="new-category" #newCategoryForm="ngForm" flex>
-  <md-input-container fxFlex="55">
+  <md-input-container fxFlex="60">
     <input mdInput placeholder="Category Name" type="text"
       [(ngModel)]="parameters.name" name="name">
   </md-input-container>
 
-  <md-input-container  fxFlex="15">
-    <input mdInput type="number" placeholder="Overall Arb."
+  <md-input-container  fxFlex="10">
+    <input mdInput type="number" placeholder="Overall"
       [(ngModel)]="parameters.oaArbiters" name="oaArbiters">
   </md-input-container>
 
-  <md-input-container fxFlex="15" >
-    <input mdInput type="number" placeholder="Tech. Qual. Arb."
+  <md-input-container fxFlex="10" >
+    <input mdInput type="number" placeholder="Tech. Qual."
       [(ngModel)]="parameters.tqArbiters" name="tqArbiters">
   </md-input-container>
 
-  <md-input-container  fxFlex="15">
-    <input mdInput type="number" placeholder="Nandu Arb."
+  <md-input-container  fxFlex="10">
+    <input mdInput type="number" placeholder="Nandu."
       [(ngModel)]="parameters.ndArbiters" name="ndArbiters">
   </md-input-container>
   <button md-button fxFlex="10"  (click)="addCategory()">Append</button>

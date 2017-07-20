@@ -7,6 +7,7 @@ import { LocalStorageModule } from 'angular-2-local-storage';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { MdIconModule } from '@angular/material';
 import { CategoriesService } from './categories/categories.service';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { CategoriesComponent } from './categories/categories.component';

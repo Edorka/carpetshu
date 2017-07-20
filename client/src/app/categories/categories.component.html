@@ -1,19 +1,35 @@
-<div layout-padding fxLayout="column">
-  <md-list>
-    <md-list-item  *ngFor="let category of categoriesList; let current = index">
-      <span fxFlex="45">{{category.parameters.name}}
-        <a [routerLink]="[ current + '/competitors']">
-          competitors
-        </a>
-      </span>
-      <span fxFlex="15">OA:{{category.parameters.oaArbiters}}</span>
-      <span fxFlex="15">TQ:{{category.parameters.tqArbiters}}</span>
-      <span fxFlex="15">ND:{{category.parameters.ndArbiters}}</span>
-      <button md-button fxFlex="10"  (click)="openCategory(category)">Enter</button>
-    </md-list-item>
-  </md-list>
-  <category-entry></category-entry>
-  <div fxFlex="100" fxLayout="row" fxLayoutAlign="center center">
+
+<div layout-padding fxLayout="column" fxFlex>
+  <div fxFlex>
+    <md-list>
+      <md-list-item class="header">
+        <span fxFlex="60">Category Names
+        </span>
+        <span fxFlex="30">Arbiters</span>
+        <span fxFlex="10">Actions</span>
+      </md-list-item>
+      <md-list-item  *ngFor="let category of categoriesList; let current = index">
+        <span fxFlex="60">
+
+          <span fxFlex>
+            {{category.parameters.name}}
+          </span>
+          <a md-button [routerLink]="[ current + '/competitors']">
+            <md-icon>account_box</md-icon>
+            {{category.competitors.length}} Competitors
+          </a>
+        </span>
+        <span fxFlex="10">OA:{{category.parameters.oaArbiters}}</span>
+        <span fxFlex="10">TQ:{{category.parameters.tqArbiters}}</span>
+        <span fxFlex="10">ND:{{category.parameters.ndArbiters}}</span>
+        <button md-button fxFlex="10"  (click)="openCategory(category)">Enter</button>
+      </md-list-item>
+    </md-list>
+  </div>
+  <div fxFlex="none">
+    <category-entry></category-entry>
+  </div>
+  <div fxFlex="none" fxLayout="row" fxLayoutAlign="center center">
     <button md-raised-button  [disabled]="canSave === false" (click)="save()">Save to disk</button>
   </div>
 </div>
