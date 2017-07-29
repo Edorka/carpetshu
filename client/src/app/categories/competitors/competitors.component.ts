@@ -27,7 +27,9 @@ export class CompetitorsComponent implements OnInit {
     this.newCompetitor = new Competitor("");
   }
   add(competitor: Competitor){
+    console.log('adding ',competitor, 'to', this.category);
     this.category.addCompetitor(competitor);
+    this.categories.setModified();
     this.newCompetitor = new Competitor("");
   }
   ngOnDestroy() {

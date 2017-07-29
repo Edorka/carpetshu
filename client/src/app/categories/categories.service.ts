@@ -13,21 +13,29 @@ export class CategoriesService {
     private localStorageService: LocalStorageService
   ) {
     var data:any = this.localStorageService.get('categories');
-    if ( data === null ){
-        this.list = [ ];
-    } else {
-        var parsed_data:Category[] = JSON.parse(data);
-        this.list = parsed_data;
+    this.list = [ ];
+    if ( data !== null ){
+        var parsed_data:Object[] = JSON.parse(data);
+        for (var item of parsed_data){
+            var category: Category = this.loadJSON(item);
+            this.list.push(category);
+        }
     }
     this.changes.subscribe(list => this.save(list));
     this.modified.next(false);
     this.changes.next(this.list);
   }
-
+  loadJSON(item: Object): Category{
+    var category = new Category(item['parameters'], item['competitors']);
+    return category;
+  }
   save(list: Category[]){
     console.log('saving')
     this.localStorageService.set('categories', JSON.stringify(list));
     this.modified.next(false);
+  }
+  setModified(){
+    this.modified.next(true);
   }
   getModified(): Observable<Boolean>{
     return this.modified.asObservable();
