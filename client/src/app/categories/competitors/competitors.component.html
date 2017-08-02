@@ -1,4 +1,4 @@
-<div layout-padding>
+<div layout-padding fxLayout="column" fxFlex>
   <h1>
     {{category.parameters.name}}
   </h1>
@@ -15,4 +15,9 @@
     </md-input-container>
     <button md-button fxFlex="10"  (click)="add(newCompetitor)">Append</button>
   </form>
+  <div fxFlex="none" fxLayout="row" fxLayoutAlign="center center">
+    <a md-button [routerLink]="[ '/categories/']">
+      <md-icon>arrow_left</md-icon>Categories list
+    </a>
+  </div>
 </div>
