@@ -26,7 +26,8 @@ export class CategoriesService {
     this.changes.next(this.list);
   }
   loadJSON(item: Object): Category{
-    var category = new Category(item['parameters'], item['competitors']);
+    var category = new Category();
+    category.fromJSON(item);
     return category;
   }
   save(list: Category[]){
