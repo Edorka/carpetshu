@@ -22,7 +22,9 @@
         <span fxFlex="10">OA:{{category.parameters.oaArbiters}}</span>
         <span fxFlex="10">TQ:{{category.parameters.tqArbiters}}</span>
         <span fxFlex="10">ND:{{category.parameters.ndArbiters}}</span>
-        <button md-button fxFlex="10"  (click)="openCategory(category)">Enter</button>
+        <a fxFlex="10" [disabled]="category.competitors.length < 1" md-button [routerLink]="[ current + '/perform']">
+          Perform
+        </a>
       </md-list-item>
     </md-list>
   </div>
