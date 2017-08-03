@@ -12,14 +12,11 @@ export class CategoriesService {
   constructor(
     private localStorageService: LocalStorageService
   ) {
-    var data:any = this.localStorageService.get('categories');
     this.list = [ ];
+    var data:any = this.localStorageService.get('categories');
     if ( data !== null ){
         var parsed_data:Object[] = JSON.parse(data);
-        for (var item of parsed_data){
-            var category: Category = this.loadJSON(item);
-            this.list.push(category);
-        }
+        this.list = parsed_data.map((entry) => this.loadJSON(entry));
     }
     this.changes.subscribe(list => this.save(list));
     this.modified.next(false);
