@@ -13,12 +13,18 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryEntryComponent } from './categories/entry/entry.component';
 import { CompetitorsComponent } from './categories/competitors/competitors.component';
+import { PerformanceComponent } from './categories/competitors/performance/performance.component';
+import { PerformancesComponent } from './categories/performances/performances.component';
 
 const app_routes: Routes = [
   { path: 'categories',
     component: CategoriesComponent},
   { path: 'categories/:position/competitors',
     component: CompetitorsComponent},
+  { path: 'categories/:position/competitors/:competitorId/performance',
+    component: PerformanceComponent},
+  { path: 'categories/:position/performances',
+    component: PerformancesComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'categories' }
 ]
 
@@ -29,7 +35,9 @@ export const app_routing = RouterModule.forRoot(app_routes);
     AppComponent,
     CategoriesComponent,
     CategoryEntryComponent,
-    CompetitorsComponent
+    CompetitorsComponent,
+    PerformanceComponent,
+    PerformancesComponent
   ],
   imports: [
     MaterialModule,
