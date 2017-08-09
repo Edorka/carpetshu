@@ -22,7 +22,8 @@
         <span fxFlex="10">OA:{{category.parameters.oaArbiters}}</span>
         <span fxFlex="10">TQ:{{category.parameters.tqArbiters}}</span>
         <span fxFlex="10">ND:{{category.parameters.ndArbiters}}</span>
-        <a fxFlex="10" [disabled]="category.competitors.length < 1" md-button [routerLink]="[ current + '/perform']">
+        <a fxFlex="10" [disabled]="category.competitors.length < 1"
+          md-button [routerLink]="[ current + '/performances']">
           Perform
         </a>
       </md-list-item>

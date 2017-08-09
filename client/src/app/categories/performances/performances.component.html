@@ -1,3 +1,15 @@
-<p>
-  performances works!
-</p>
+<div layout-padding fxLayout="column" fxFlex>
+  <h1>
+    Performance of competitors for {{category.parameters.name}}
+  </h1>
+  <md-list>
+    <md-list-item  *ngFor="let competitor of category.competitors; let current = index">
+      <span fxFlex="85">{{competitor.name}}</span>
+      <button md-button fxFlex="15"
+        [routerLink]="[ '/categories', this.id, 'competitors', current , 'performance']">
+        Perform
+      </button>
+
+    </md-list-item>
+  </md-list>
+</div>
