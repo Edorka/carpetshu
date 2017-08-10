@@ -1,9 +1,11 @@
 import {CategoryParameters} from './category-parameters';
 import {Competitor} from "./competitor";
+import {Performance} from  "./performance";
 
 export class Category {
   parameters: CategoryParameters;
   competitors: Competitor[];
+  performances: Performance[];
   constructor (
     parameters: CategoryParameters = null,
     competitors: Competitor[] = []
