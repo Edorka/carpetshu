@@ -28,7 +28,6 @@ export class CategoriesService {
     return category;
   }
   save(list: Category[]){
-    console.log('saving')
     this.localStorageService.set('categories', JSON.stringify(list));
     this.modified.next(false);
   }

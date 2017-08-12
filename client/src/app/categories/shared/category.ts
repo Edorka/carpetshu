@@ -16,6 +16,7 @@ export class Category {
   fromJSON(json: Object){
       this.parameters = json['parameters'] as CategoryParameters;
       this.competitors = json['competitors'] as Competitor[];
+      this.performances = json['performances'] as Performance[];
   }
   addCompetitor(competitor: Competitor){
       this.competitors.push(competitor);
